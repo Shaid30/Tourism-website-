@@ -5,7 +5,14 @@
     font-family: "Poppins", sans-serif;
 }
 
-/* Navbar style */
+html,
+body {
+    overflow-x: hidden;
+    overscroll-behavior: none;
+    scroll-behavior: smooth;
+
+}
+
 .navbar {
     position: fixed;
     top: 0;
@@ -52,7 +59,6 @@
     color: #f8c567;
 }
 
-/* Mobile menu */
 .menu-icon {
     display: none;
     font-size: 1.8rem;
@@ -60,7 +66,6 @@
     cursor: pointer;
 }
 
-/* Hero section for demo */
 .hero {
     height: 100vh;
     display: flex;
@@ -122,7 +127,7 @@
 }
 
 .intro {
-    min-height: 100vh;
+    padding: 60px 20px;
     display: flex;
     flex-direction: column;
     justify-content: center;
