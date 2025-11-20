@@ -21,7 +21,23 @@
             <li><a href="">Blog</a></li>
             <li><a href="">About</a></li>
             <li><a href="">Contact</a></li>
-            <li><a href=""><i class="fa-solid fa-circle-user"></i></i></a></li>
+            <div class="user-dropdown">
+                <a href="#" class="user-icon" id="userMenu" data-toggle="dropdown">
+                    <i class="fa fa-user" style="font-size:22px;"></i>
+                </a>
+
+                <div class=" user-dropdown-menu">
+                    {% if user.is_authenticated %}
+                    </span>
+                    <a href="{% url 'profile' %}">My Account</a>
+                    <a href="{% url 'logout' %}">Logout</a>
+                    {% else %}
+                    <a href="{% url 'login' %}">Login</a>
+                    <a href="{% url 'register' %}">Register</a>
+                    {% endif %}
+                </div>
+            </div>
+
 
         </ul>
         <div class="menu-icon" id="menuIcon">☰</div>
@@ -127,9 +143,7 @@
 
                     <p class="desc">
                         Enjoy the longest natural sea beach with sunset views, boat rides, and seafood. Comfortable
-                        hotel stay included...
-                        <button class="btn btn-more">Read more
-                        </button>
+                        hotel stay included.
                     </p>
 
                     <div class=" price-row">
@@ -162,10 +176,8 @@
 
                     <p class="desc">
                         Explore stunning hill views, sunrise in the clouds, and tribal villages. Basic accommodation
-                        included....
-                        <button class="btn btn-more">Read more</button>
+                        include.
                     </p>
-
                     <div class="price-row">
                         <div class="price">BDT 8,200</div>
                         <div class="actions">
@@ -197,7 +209,6 @@
 
                     <p class="desc">
                         Experience mangrove forest boat safari with birds & wildlife sightings. Includes meal & guide..
-                        <button class="btn btn-more">Read more</button>
                     </p>
 
                     <div class="price-row">
@@ -211,6 +222,46 @@
 
         </div>
     </div>
+    <!-- Customer Review Section -->
+    <section id="reviews" class="reviews-section">
+        <div class="container">
+            <h2>Customer Reviews</h2>
+            <div class="reviews">
+                <div class="review-card">
+                    <img src="{% static 'myapp/images/samanta.jpg'%}" alt="">
+                    <p>"Amazing experience! Highly recommend this tour."</p>
+                    <h4>Samanta</h4>
+                    <span> Banaripara,Barisla</span>
+                </div>
+                <div class="review-card">
+                    <img src="{% static 'myapp/images/shuvo.jpg'%}" alt="">
+                    <p>"Very organized and friendly staff. Loved it!"</p>
+                    <h4>Shuvo Rahman</h4>
+                    <span>Dhaka,Bangladesh</span>
+                </div>
+                <div class="review-card">
+                    <img src="{% static 'myapp/images/tahsin.jpg'%}" alt="">
+                    <p>"Beautiful places and great service. Will visit again."</p>
+                    <h4>Sajedul islam</h4>
+                    <span>Sonaimuri,Noakhali</span>
+                </div>
+                <div class="review-card">
+                    <img src="{% static 'myapp/images/jerry.jpg'%}" alt="">
+                    <p>“Excellent service! Very satisfied with the experience.”</p>
+                    <h4>Samia </h4>
+                    <span>Habiganj,Sylhet</span>
+                </div>
+                <div class="review-card">
+                    <img src="{% static 'myapp/images/juwel.jpg'%}" alt="">
+                    <p>“Loved it! Everything went smoothly and hassle-free.”</p>
+                    <h4>Jewel Rana</h4>
+                    <span>Police line,Khulna</span>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
     <footer id="contact">
         <p>© 2025 Travel BD. All rights reserved.</p>
         <p>Developed by <b>Md. Abu Shaid</b></p>
