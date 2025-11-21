@@ -1,0 +1,14 @@
+<h2>{{ category.name }}</h2>
+
+{% for d in destinations %}
+<div style="margin-bottom: 20px;">
+    <h3>{{ d.name }}</h3>
+    <p>{{ d.description }}</p>
+
+    {% if d.image %}
+    <img src="{{ d.image.url }}" width="220">
+    {% endif %}
+</div>
+{% empty %}
+<p>No destinations found</p>
+{% endfor %}

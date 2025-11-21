@@ -1,0 +1,8 @@
+<h2>Destination Categories</h2>
+<ul>
+    {% for category in categories %}
+    <li>
+        <a href="{% url 'category_destinations' category.id %}">{{ category.name }}</a>
+    </li>
+    {% endfor %}
+</ul>

@@ -59,6 +59,40 @@ body {
     color: #f8c567;
 }
 
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: white;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 100;
+    list-style: none;
+    padding: 10px 0;
+}
+
+.dropdown-content li {
+    padding: 8px 15px;
+}
+
+.dropdown-content li a {
+    color: black;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown-content li:hover {
+    background: #f0f0f0;
+}
+
 .user-dropdown {
     position: relative;
     display: inline-block;

@@ -3,6 +3,8 @@ from django.contrib.auth.models import User
 from django.contrib.auth import login
 from .forms import RegisterForm
 from.models import Profile
+from django.shortcuts import render, get_object_or_404
+from .models import Category, Destination
 def base(request):
     return render(request,'myapp/base.html')
 def register(request):
@@ -21,11 +23,23 @@ def register(request):
             Profile.objects.create(user=user, photo=photo)
 
             login(request, user)
-            return redirect('home')
+            return redirect('base')
     else:
         form = RegisterForm()
 
     return render(request, 'myapp/register.html', {'form': form})
+
+def destination_categories(request):
+    categories= Category.objects.all()
+    return render(request, 'myapp/destination_categories.html',{'categories':categories})
+
+def category_destinations(request, category_id):
+    category = get_object_or_404(Category, id= category_id)
+    destinations = Destination.objects.filter(category=category)
+    return render(request, 'myapp/category_destinations.html',{
+        'category':category,
+        'destinations':destinations
+    })
 
 
 

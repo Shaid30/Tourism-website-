@@ -15,7 +15,19 @@
         <div class="logo">Travel<span>BD</span></div>
         <ul class="nav-links" id="navLinks">
             <li><a href="">Home</a></li>
-            <li><a href="">Destinations</a></li>
+            <li class="dropdown"><a href="{% url 'destination_categories' %}">Destinations</a>
+                <ul class="dropdown-content">
+                    {% for category in categories_for_nav %}
+                    <li>
+                        <a href="{% url 'category_destinations' category.id %}">
+                            {{ category.name }}
+                        </a>
+                    </li>
+                    {% endfor %}
+                </ul>
+            </li>
+
+            </li>
             <li><a href="">Packages</a></li>
             <li><a href="">Gallery</a></li>
             <li><a href="">Blog</a></li>
