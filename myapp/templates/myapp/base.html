@@ -14,8 +14,8 @@
     <nav class="navbar">
         <div class="logo">Travel<span>BD</span></div>
         <ul class="nav-links" id="navLinks">
-            <li><a href="">Home</a></li>
-            <li class="dropdown"><a href="{% url 'destination_categories' %}">Destinations</a>
+            <li><a href="{%url 'home' %}">Home</a></li>
+            <li class="dropdown"><a href=" {% url 'destination_categories' %}">Destinations</a>
                 <ul class="dropdown-content">
                     {% for category in categories_for_nav %}
                     <li>
@@ -28,12 +28,14 @@
             </li>
 
             </li>
-            <li><a href="">Packages</a></li>
+            <li>
+                <a href=" ">Packages</a>
+            </li>
             <li><a href="">Gallery</a></li>
             <li><a href="">Blog</a></li>
-            <li><a href="">About</a></li>
-            <li><a href="">Contact</a></li>
-            <div class="user-dropdown">
+            <li><a href="{% url 'about'%}">About</a></li>
+            <li><a href="{% url 'contact' %}">Contact</a></li>
+            <div class=" user-dropdown">
                 <a href="#" class="user-icon" id="userMenu" data-toggle="dropdown">
                     <i class="fa fa-user" style="font-size:22px;"></i>
                 </a>
@@ -234,7 +236,6 @@
 
         </div>
     </div>
-    <!-- Customer Review Section -->
     <section id="reviews" class="reviews-section">
         <div class="container">
             <h2>Customer Reviews</h2>

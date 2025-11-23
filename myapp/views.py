@@ -4,7 +4,9 @@ from django.contrib.auth import login
 from .forms import RegisterForm
 from.models import Profile
 from django.shortcuts import render, get_object_or_404
-from .models import Category, Destination
+from .models import Category, Destination, About, TeamMember, Service
+from .forms import ContactForm
+from django.contrib import messages
 def base(request):
     return render(request,'myapp/base.html')
 def register(request):
@@ -31,7 +33,7 @@ def register(request):
 
 def destination_categories(request):
     categories= Category.objects.all()
-    return render(request, 'myapp/destination_categories.html',{'categories':categories})
+    return render(request, 'myapp/destination_categories.html', {'categories':categories})
 
 def category_destinations(request, category_id):
     category = get_object_or_404(Category, id= category_id)
@@ -41,6 +43,19 @@ def category_destinations(request, category_id):
         'destinations':destinations
     })
 
+def contact_view(request):
+    if request.method == 'POST':
+        form = ContactForm(request.POST)
+        if form.is_valid():
+            form.save()
+            messages.success(request, 'Your message has been sent!')
+            return redirect('contact')
+    else:
+        form = ContactForm()
+    return render(request, 'myapp/contact.html', {'form': form})
 
-
-
+def about_view(request):
+    about = About.objects.first()   
+    team = TeamMember.objects.all()
+    services = Service.objects.all()
+    return render(request, 'myapp/about.html', {'about': about, 'team': team, 'services': services})

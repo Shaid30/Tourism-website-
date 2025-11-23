@@ -1,0 +1,84 @@
+/* =============== ABOUT PAGE DESIGN =============== */
+
+/* Body */
+body {
+    background: #f5f7fa;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* About image left side */
+img.img-fluid {
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* About text right side */
+h1 {
+    font-weight: 700;
+    color: #1a1a1a;
+    margin-bottom: 15px;
+}
+
+.lead {
+    color: #444;
+    font-size: 1.1rem;
+    line-height: 1.7;
+}
+
+/* Guide section */
+.card {
+    border-radius: 12px;
+    overflow: hidden;
+    border: none;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+/* Team member image */
+.card-img-top {
+    height: 200px;
+    object-fit: cover;
+}
+
+/* Services section */
+.p-3.border.rounded {
+    padding: 20px !important;
+    border-radius: 12px !important;
+    background: #fff;
+    border: none !important;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+    transition: 0.3s ease;
+}
+
+.p-3.border.rounded:hover {
+    transform: translateY(-5px);
+}
+
+/* Service icon */
+.p-3 i {
+    color: #007bff;
+    margin-bottom: 10px;
+    display: block;
+}
+
+/* Section title */
+h3 {
+    font-weight: 700;
+    color: #222;
+    margin-bottom: 20px;
+}
+
+/* Responsive tweak */
+@media (max-width: 768px) {
+    h1 {
+        text-align: center;
+    }
+
+    .lead {
+        text-align: center;
+    }
+}
