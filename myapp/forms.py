@@ -1,7 +1,7 @@
 from django import forms 
 from django.contrib.auth.models import User
 from .models import Profile
-from .models import ContactMessage
+from .models import ContactMessage,GalleryImage
 
 
 class RegisterForm(forms.ModelForm):
@@ -35,4 +35,8 @@ class ContactForm(forms.ModelForm):
         }
 
     
-
+class GalleryUploadForm(forms.ModelForm):
+   class Meta:
+      models = GalleryImage
+      fields =['category','title','location','image']
+      

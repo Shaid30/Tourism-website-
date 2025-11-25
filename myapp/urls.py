@@ -10,5 +10,14 @@ urlpatterns = [
     path('destinations/<int:category_id>/', views.category_destinations, name= 'category_destinations'),
     path('contact/', contact_view, name='contact'),
     path('about/', about_view, name='about'),
+    path("gallery/", views.gallery, name="gallery"),
+    path("gallery/upload/", views.upload_image, name="upload_image"),
+    path('blog/', views.blog_list, name='blog_list'),
+    path('blog/<slug:slug>/', views.blog_detail, name='blog_detail'),
+
+
+
+    
+
 ]
 

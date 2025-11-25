@@ -1,0 +1,38 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'myapp/css/gallery.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/css/lightbox.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/js/lightbox.min.js"></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <h2>Gallery</h2>
+
+    <div class="categories">
+        <a href="?">All</a>
+        {% for c in categories %}
+        <a href="?category={{ c.name }}">{{ c.name }}</a>
+        {% endfor %}
+    </div>
+
+    <div class="gallery-grid">
+        {% for img in images %}
+        <div class="gallery-item">
+            <a href="{{ img.image.url }}" data-lightbox="gallery" data-title="{{ img.title }}">
+                <img src="{{ img.image.url }}" alt="">
+            </a>
+            <div class="location">{{ img.location }}</div>
+        </div>
+        {% endfor %}
+    </div>
+
+
+</body>
+
+</html>

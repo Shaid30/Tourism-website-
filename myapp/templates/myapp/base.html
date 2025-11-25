@@ -27,12 +27,11 @@
                 </ul>
             </li>
 
-            </li>
             <li>
                 <a href=" ">Packages</a>
             </li>
-            <li><a href="">Gallery</a></li>
-            <li><a href="">Blog</a></li>
+            <li><a href="{% url 'gallery'%}">Gallery</a></li>
+            <li><a href="{% url 'blog_list' %}">Blog</a></li>
             <li><a href="{% url 'about'%}">About</a></li>
             <li><a href="{% url 'contact' %}">Contact</a></li>
             <div class=" user-dropdown">
@@ -56,6 +55,11 @@
         </ul>
         <div class="menu-icon" id="menuIcon">☰</div>
     </nav>
+
+    <div class="container py-5">
+        {% block content %}
+        {% endblock %}
+    </div>
     <section class=" hero">
         <h1>Explore the beauty of Bangladesh</h1>
         <p>Discover, Travel & Enjoy</p>
@@ -222,7 +226,8 @@
                     </div>
 
                     <p class="desc">
-                        Experience mangrove forest boat safari with birds & wildlife sightings. Includes meal & guide..
+                        Experience mangrove forest boat safari with birds & wildlife sightings. Includes meal &
+                        guide..
                     </p>
 
                     <div class="price-row">
@@ -281,7 +286,7 @@
     </footer>
     <script>
         const images = [
-            "{% static 'myapp/images/coxs.jpg' %}",
+            "{% static 'myapp/images/view2.jpg' %}",
             "{% static 'myapp/images/sajek.jpg' %}",
             "{% static 'myapp/images/jaflong.jpg' %}"
         ];
