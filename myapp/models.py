@@ -90,3 +90,12 @@ class Blog(models.Model):
             return self.title
         
 
+class Package(models.Model):
+    name = models.CharField(max_length=100)
+    price = models.DecimalField(max_digits=10, decimal_places=2)
+    duration = models.CharField(max_length=50)
+    features = models.TextField()
+    image = models.ImageField(upload_to='packages/', default= 'default.jpg')
+
+    def __str__(self):
+        return self.name

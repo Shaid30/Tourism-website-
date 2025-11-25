@@ -1,0 +1,35 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Book Package</title>
+    <link rel="stylesheet" href="{% static 'myapp/css/booking.css' %}">
+</head>
+
+<body>
+
+    <div class="booking-container">
+
+        <h2>You are booking: {{ package.name }}</h2>
+
+        <p><strong>Price:</strong> {{ package.price }} BDT</p>
+        <p><strong>Duration:</strong> {{ package.duration }}</p>
+
+        <form method="POST">
+            {% csrf_token %}
+
+            <input type="text" name="name" placeholder="Your Name" required>
+
+            <input type="email" name="email" placeholder="Email" required>
+
+            <input type="text" name="phonenumber" placeholder="Phone Number" required>
+
+            <button type="submit" class="btn">Confirm Booking</button>
+        </form>
+
+    </div>
+
+</body>
+
+</html>

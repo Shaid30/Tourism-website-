@@ -4,7 +4,7 @@ from django.contrib.auth import login
 from .forms import RegisterForm
 from.models import Profile
 from django.shortcuts import render, get_object_or_404
-from .models import Category, Destination, About, TeamMember, Service,GalleryImage,GalleryCategory,Blog
+from .models import Category, Destination, About,TeamMember, Service,GalleryImage,GalleryCategory,Blog,Package
 from .forms import ContactForm,GalleryUploadForm
 from django.contrib import messages
 def base(request):
@@ -96,4 +96,11 @@ def blog_detail(request, slug):
     post = get_object_or_404(Blog, slug=slug)
     return render(request, 'myapp/blog_detail.html', {'post':post})
 
+def package_list(request):
+    packages = Package.objects.all()
+    return render(request, 'myapp/package_list.html', {'packages': packages})
 
+
+def book_package(request, package_id):
+    package = Package.objects.get(id=package_id)
+    return render(request, 'myapp/booking.html', {"package": package})

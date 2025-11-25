@@ -14,10 +14,14 @@ urlpatterns = [
     path("gallery/upload/", views.upload_image, name="upload_image"),
     path('blog/', views.blog_list, name='blog_list'),
     path('blog/<slug:slug>/', views.blog_detail, name='blog_detail'),
+    path('packages/', views.package_list, name='package_list'),
+    path('packages/book/<int:package_id>/', views.book_package, name='book_package'),
+
+
+]
 
 
 
     
 
-]
 
