@@ -4,8 +4,6 @@ from .views import about_view
 from .views import contact_view
 urlpatterns = [
     path('',views.base, name = 'home'),
-    path('register/', views.register, name='register'),
-    path('profile/', views.Profile, name='profile'),
     path('destinations/', views.destination_categories, name='destination_categories'),
     path('destinations/<int:category_id>/', views.category_destinations, name= 'category_destinations'),
     path('contact/', contact_view, name='contact'),
@@ -19,8 +17,13 @@ urlpatterns = [
     path('success/', views.success_page, name='success_page'),
     path('search/', views.search_packages, name='search_packages'),
     path('destination/<int:destination_id>/packages/', views.destination_packages, name='destination_packages'),
-
+    path('login/', views.login_user, name='login'),
+    path('logout/', views.logout_user, name='logout'),
+    path('register/', views.register_user, name='register'),
+    path('account/', views.user_dashboard, name='user_dashboard'),
 ]
+
+
 
 
 

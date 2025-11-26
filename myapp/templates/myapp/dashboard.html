@@ -1,0 +1,17 @@
+{% load static %}
+
+<link rel="stylesheet" href="{% static 'myapp/css/dashboard.css' %}">
+
+<div class="dashboard-container">
+
+    <h2>Welcome, {{ user.username }}</h2>
+    <p>Email: {{ user.email }}</p>
+
+    <ul class="dashboard-menu">
+        <li><a href="#">My Bookings</a></li>
+        <li><a href="#">My Messages</a></li>
+        <li><a href="#">Update Profile</a></li>
+        <li><a href="{% url 'logout' %}" class="logout-btn">Logout</a></li>
+    </ul>
+
+</div>
