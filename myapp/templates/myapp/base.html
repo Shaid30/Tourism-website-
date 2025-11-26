@@ -64,8 +64,8 @@
         <h1>Explore the beauty of Bangladesh</h1>
         <p>Discover, Travel & Enjoy</p>
         <div class="search-container">
-            <form action="#" method="get">
-                <input type="text" placeholder="search-destinations" name="search">
+            <form action="{% url 'search_packages' %}" method="get">
+                <input type="text" placeholder="search-destinations" name="q" value="{{ request.GET.q }}">
                 <button type="submit"><i class="fa-solid fa-magnifying-glass"></i>
                 </button>
             </form>

@@ -16,7 +16,9 @@ urlpatterns = [
     path('blog/<slug:slug>/', views.blog_detail, name='blog_detail'),
     path('packages/', views.package_list, name='package_list'),
     path('packages/book/<int:package_id>/', views.book_package, name='book_package'),
-
+    path('success/', views.success_page, name='success_page'),
+    path('search/', views.search_packages, name='search_packages'),
+    path('destination/<int:destination_id>/packages/', views.destination_packages, name='destination_packages'),
 
 ]
 

@@ -1,5 +1,5 @@
 from django.contrib import admin
-from.models import Profile,Category, Destination,ContactMessage,About,TeamMember, Service, GalleryCategory,GalleryImage,Blog,Package
+from.models import Profile,Category, Destination,ContactMessage,About,TeamMember, Service, GalleryCategory,GalleryImage,Blog,Package,Booking
 
 # Register your models here.
 admin.site.register(Profile)
@@ -15,3 +15,4 @@ class BlogAdmin(admin.ModelAdmin):
     prepopulated_fields = {'slug': ('title',)}
     list_display = ('title', 'created_at')
 admin.site.register(Package)    
+admin.site.register(Booking)

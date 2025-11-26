@@ -4,7 +4,7 @@ from django.contrib.auth import login
 from .forms import RegisterForm
 from.models import Profile
 from django.shortcuts import render, get_object_or_404
-from .models import Category, Destination, About,TeamMember, Service,GalleryImage,GalleryCategory,Blog,Package
+from .models import Category, Destination, About,TeamMember, Service,GalleryImage,GalleryCategory,Blog,Package,Booking
 from .forms import ContactForm,GalleryUploadForm
 from django.contrib import messages
 def base(request):
@@ -101,6 +101,49 @@ def package_list(request):
     return render(request, 'myapp/package_list.html', {'packages': packages})
 
 
-def book_package(request, package_id):
+def book_package(request,package_id):
     package = Package.objects.get(id=package_id)
+
+    if request.method == "POST":
+        name = request.POST.get('name')
+        email = request.POST.get('email')
+        phone = request.POST.get('phonenumber')
+        payment_method = request.POST.get('payment_method')
+        transaction_id = request.POST.get('transaction_id')
+
+        Booking.objects.create(
+            package=package,
+            name=name,
+            email=email,
+            phone=phone,
+            payment_method=payment_method,
+            transaction_id=transaction_id
+        )
+
+        return redirect('success_page')  
+
     return render(request, 'myapp/booking.html', {"package": package})
+
+
+def success_page(request):
+    return render(request, 'myapp/success.html')
+
+from django.shortcuts import render, get_object_or_404, redirect
+from .models import Destination, Package
+
+def search_packages(request):
+    query = request.GET.get('q')
+    if query:
+        try:
+        
+            destination = Destination.objects.get(name__iexact=query)
+            return redirect('destination_packages', destination_id=destination.id)
+        except Destination.DoesNotExist:
+            return render(request, 'myapp/search_results.html', {'query': query, 'destinations': []})
+    else:
+        return render(request, 'myapp/search_results.html', {'query': '', 'destinations': []})
+
+def destination_packages(request, destination_id):
+    destination = get_object_or_404(Destination, id=destination_id)
+    packages = destination.packages.all()
+    return render(request, 'myapp/destination_packages.html', {'destination': destination, 'packages': packages})

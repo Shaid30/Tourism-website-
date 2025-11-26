@@ -1,0 +1,12 @@
+<h2>Search results for "{{ query }}"</h2>
+{% if destinations %}
+<ul>
+    {% for destination in destinations %}
+    <li>
+        <a href="{% url 'destination_packages' destination.id %}">{{ destination.name }}</a>
+    </li>
+    {% endfor %}
+</ul>
+{% else %}
+<p>No destinations found for "{{ query }}".</p>
+{% endif %}
