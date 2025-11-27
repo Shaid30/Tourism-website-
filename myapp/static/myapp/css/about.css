@@ -90,6 +90,10 @@ h3 {
     margin-bottom: 20px;
 }
 
+.meet-icon {
+    font-size: 30px;
+}
+
 /* Responsive tweak */
 @media (max-width: 768px) {
     h1 {
