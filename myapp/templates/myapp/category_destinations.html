@@ -1,14 +1,14 @@
-<h2>{{ category.name }}</h2>
+<h2 style="text-align: center;">{{ category.name }}</h2style>
 
-{% for d in destinations %}
-<div style="margin-bottom: 20px;">
-    <h3>{{ d.name }}</h3>
-    <p>{{ d.description }}</p>
+    {% for d in destinations %}
+    <div style="margin-bottom: 20px; display: flex; justify-content: center; align-items: center;">
+        <h3 style="text-align: center;">{{ d.name }}</h3>
+        <p>{{ d.description }}</p>
 
-    {% if d.image %}
-    <img src="{{ d.image.url }}" width="220">
-    {% endif %}
-</div>
-{% empty %}
-<p>No destinations found</p>
-{% endfor %}
+        {% if d.image %}
+        <img src="{{ d.image.url }}" width="220" ; margin-top="30px">
+        {% endif %}
+    </div>
+    {% empty %}
+    <p>No destinations found</p>
+    {% endfor %}
