@@ -39,19 +39,21 @@ def about_view(request):
     return render(request, 'myapp/about.html', {'about': about, 'team': team, 'services': services})
 
 
-def gallery(request):
-    category_name = request.GET.get('category')
-    categories = GalleryCategory.objects.all()
+def gallery(request, category_id=None):
+    categories = Category.objects.all()
+    selected_category = request.GET.get("category")
 
-    if category_name :
-        images = GalleryImage.objects.filter(category_name=category_name)
+    if selected_category:
+        images = GalleryImage.objects.filter(category_id=selected_category)
     else:
         images = GalleryImage.objects.all()
 
-    return render(request, "gallery.html",{
-        "categories": categories,
-        "images": images,
+    return render(request, 'myapp/gallery.html', {
+        'categories': categories,
+        'images': images,
+        'current_category': category_id,
     })
+
 
 def upload_image(request):
     if request.method =="POST":
@@ -106,8 +108,6 @@ def book_package(request,package_id):
 def success_page(request):
     return render(request, 'myapp/success.html')
 
-from django.shortcuts import render, get_object_or_404, redirect
-from .models import Destination, Package
 
 def search_packages(request):
     query = request.GET.get('q')

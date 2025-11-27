@@ -1,41 +1,77 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    background: #e6f0ff;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 32px;
+    font-weight: 600;
+}
+
+.categories {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.categories a {
+    text-decoration: none;
+}
+
+.categories button {
+    padding: 8px 18px;
+    margin: 5px;
+    border: none;
+    border-radius: 25px;
+    background: #e0e0e0;
+    cursor: pointer;
+    transition: 0.3s;
+    font-size: 16px;
+}
+
+.categories button:hover {
+    background: #bfbfbf;
+}
+
+.categories .active {
+    background: #333;
+    color: white;
+}
+
 .gallery-grid {
-    column-count: 3;
-    column-gap: 15px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 12px;
 }
 
 .gallery-item {
-    margin-bottom: 15px;
-    break-inside: avoid;
+    border: 1px solid#ddd;
+    background: #d0e0ff;
+    padding: 5px;
+    border-radius: 10px;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+    transition: 0.3s;
+    overflow: hidden;
+}
+
+.gallery-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
 }
 
 .gallery-item img {
     width: 100%;
-    border-radius: 10px;
-    transition: .3s ease;
-}
-
-.gallery-item img:hover {
-    transform: scale(1.03);
+    height: 200px;
+    border-radius: 5px;
+    object-fit: cover;
+    display: block;
 }
 
 .location {
-    font-size: 14px;
-    color: #555;
-    margin-top: 5px;
-}
-
-.categories {
-    margin-bottom: 20px;
-}
-
-.categories a {
-    margin-right: 15px;
-    padding: 8px 12px;
-    background: #ddd;
-    border-radius: 5px;
-    text-decoration: none;
-}
-
-.categories a:hover {
-    background: #aaa;
+    margin-top: 8px;
+    text-align: center;
+    font-size: 15px;
+    color: #444;
 }

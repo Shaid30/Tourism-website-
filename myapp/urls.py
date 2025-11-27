@@ -10,6 +10,7 @@ urlpatterns = [
     path('about/', about_view, name='about'),
     path("gallery/", views.gallery, name="gallery"),
     path("gallery/upload/", views.upload_image, name="upload_image"),
+    path('gallery/<int:category_id>/', views.gallery, name='gallery_by_category'),
     path('blog/', views.blog_list, name='blog_list'),
     path('blog/<slug:slug>/', views.blog_detail, name='blog_detail'),
     path('packages/', views.package_list, name='package_list'),
