@@ -51,7 +51,7 @@ def gallery(request, category_id=None):
     return render(request, 'myapp/gallery.html', {
         'categories': categories,
         'images': images,
-        'current_category': category_id,
+        'selected_category': selected_category,
     })
 
 
@@ -154,3 +154,5 @@ def logout_user(request):
 def user_dashboard(request):
     user = request.user
     return render(request, 'myapp/dashboard.html', {"user": user})
+
+

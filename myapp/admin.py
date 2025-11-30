@@ -1,7 +1,6 @@
 from django.contrib import admin
 from.models import Profile,Category, Destination,ContactMessage,About,TeamMember, Service, GalleryCategory,GalleryImage,Blog,Package,Booking
 
-# Register your models here.
 admin.site.register(Profile)
 admin.site.register(Category)
 admin.site.register(Destination)

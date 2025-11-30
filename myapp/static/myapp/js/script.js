@@ -17,8 +17,6 @@ setInterval(() => {
     hero.style.backgroundImage = `url('${images[i]}')`;
 }, 5000);
 
-// Read More Button
-// Read More Button
 document.querySelectorAll(".btn-more").forEach(btn => {
     btn.addEventListener("click", function () {
         const card = this.closest(".card");
@@ -32,7 +30,7 @@ document.querySelectorAll(".btn-more").forEach(btn => {
     });
 });
 
-// Book Now Button
+
 document.querySelectorAll(".btn-book").forEach(btn => {
     btn.addEventListener("click", function () {
         const title = this.closest(".card").querySelector(".title").textContent;

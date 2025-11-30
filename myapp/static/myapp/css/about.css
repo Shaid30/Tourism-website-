@@ -92,6 +92,7 @@ h3 {
 
 .meet-icon {
     font-size: 30px;
+    cursor: pointer;
 }
 
 /* Responsive tweak */
