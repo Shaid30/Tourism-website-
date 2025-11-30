@@ -1,7 +1,8 @@
 /* ===== BLOG PAGE GLOBAL STYLE ===== */
 body {
-    background: #ccd3dc;
+    background: #d5dae0;
     font-family: 'Segoe UI', sans-serif;
+    overflow-x: hidden;
 }
 
 h1 {
@@ -14,13 +15,12 @@ h1 {
     max-width: 1200px;
 }
 
-/* ===== BLOG LIST PAGE ===== */
 
 .card {
     border: none;
     border-radius: 10px;
     overflow: hidden;
-    background: #fafafa;
+    background: #b6cce6;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
     transition: transform .3s ease, box-shadow .3s ease;
 }

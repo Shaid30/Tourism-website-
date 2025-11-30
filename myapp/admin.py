@@ -15,3 +15,4 @@ class BlogAdmin(admin.ModelAdmin):
     list_display = ('title', 'created_at')
 admin.site.register(Package)    
 admin.site.register(Booking)
+admin.site.register(Blog)
