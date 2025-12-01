@@ -1,4 +1,3 @@
-/* ===== BLOG PAGE GLOBAL STYLE ===== */
 body {
     background: #d5dae0;
     font-family: 'Segoe UI', sans-serif;
@@ -56,7 +55,6 @@ h1 {
     background-color: #0047d1;
 }
 
-/* ===== BLOG DETAIL PAGE ===== */
 
 img.img-fluid {
     border-radius: 15px;
