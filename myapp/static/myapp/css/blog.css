@@ -8,6 +8,7 @@ h1 {
     font-weight: 700;
     color: #1a1a1a;
     text-align: center;
+    margin-top: 30px;
 }
 
 .container {
@@ -78,4 +79,17 @@ img.img-fluid {
 .btn-secondary {
     border-radius: 50px;
     padding: 8px 25px;
+}
+
+#contact {
+    background: linear-gradient(135deg, #01718b, #00A8E8);
+    color: #fff;
+    text-align: center;
+    padding: 8px;
+    font-size: 0.95rem;
+}
+
+
+b {
+    color: #cccc6c;
 }

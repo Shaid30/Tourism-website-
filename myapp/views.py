@@ -6,6 +6,7 @@ from django.shortcuts import render, get_object_or_404
 from .models import Category, Destination, About,TeamMember, Service,GalleryImage,GalleryCategory,Blog,Package,Booking
 from .forms import ContactForm,GalleryUploadForm
 from django.contrib import messages
+from django.db.models import Q
 def base(request):
     return render(request,'myapp/base.html')
 
@@ -156,3 +157,28 @@ def user_dashboard(request):
     return render(request, 'myapp/dashboard.html', {"user": user})
 
 
+def search(request):
+    query = request.GET.get("q", "")
+    keywords = query.split()  # split: ['Rangamati', 'Lake', 'Tour']
+
+
+
+    package_q = Q()
+    gallery_q = Q()
+    blog_q = Q()
+
+    for word in keywords:
+        package_q |= Q(name__icontains=word) | Q(description__icontains=word)
+        gallery_q |= Q(title__icontains=word)
+        blog_q |= Q(title__icontains=word) | Q(content__icontains=word)
+
+    package_results = Package.objects.filter(package_q)
+    gallery_results = GalleryImage.objects.filter(gallery_q)
+    blog_results = Blog.objects.filter(blog_q)
+
+    return render(request, "search_results.html", {
+        "query": query,
+        "package_results": package_results,
+        "gallery_results": gallery_results,
+        "blog_results": blog_results,
+    })

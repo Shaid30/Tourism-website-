@@ -9,6 +9,7 @@ h2 {
     margin-bottom: 20px;
     font-size: 32px;
     font-weight: 600;
+    margin-top: 90px;
 }
 
 .categories {
@@ -74,4 +75,17 @@ h2 {
     text-align: center;
     font-size: 15px;
     color: #444;
+}
+
+#contact {
+    background: linear-gradient(135deg, #01718b, #00A8E8);
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+    font-size: 0.95rem;
+}
+
+
+b {
+    color: #cccc6c;
 }

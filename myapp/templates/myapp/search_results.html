@@ -1,12 +1,22 @@
-<h2>Search results for "{{ query }}"</h2>
-{% if destinations %}
-<ul>
-    {% for destination in destinations %}
-    <li>
-        <a href="{% url 'destination_packages' destination.id %}">{{ destination.name }}</a>
-    </li>
-    {% endfor %}
-</ul>
-{% else %}
-<p>No destinations found for "{{ query }}".</p>
-{% endif %}
+<h2>Search Results for "{{ query }}"</h2>
+
+<h3>Packages</h3>
+{% for item in package_results %}
+<p>{{ item.name }}</p>
+{% empty %}
+<p>No packages found.</p>
+{% endfor %}
+
+<h3>Gallery</h3>
+{% for g in gallery_results %}
+<p>{{ g.title }}</p>
+{% empty %}
+<p>No gallery images found.</p>
+{% endfor %}
+
+<h3>Blogs</h3>
+{% for b in blog_results %}
+<p>{{ b.title }}</p>
+{% empty %}
+<p>No blogs found.</p>
+{% endfor %}

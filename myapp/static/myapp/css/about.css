@@ -1,6 +1,3 @@
-/* =============== ABOUT PAGE DESIGN =============== */
-
-/* Body */
 body {
     background: #E5F0FF;
     font-family: 'Poppins', sans-serif;
@@ -8,18 +5,17 @@ body {
 
 }
 
-/* About image left side */
 img.img-fluid {
     border-radius: 12px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
-/* About text right side */
 h1 {
     font-weight: 700;
     color: #1a1a1a;
     margin-bottom: 15px;
     margin-left: 200px;
+    margin-top: 75px;
 }
 
 .lead {
@@ -29,7 +25,6 @@ h1 {
     margin-bottom: 260px;
 }
 
-/* Guide section */
 .mb-3 {
     text-align: center;
 }
@@ -47,13 +42,11 @@ h1 {
     transform: translateY(-5px);
 }
 
-/* Team member image */
 .card-img-top {
     height: 200px;
     object-fit: cover;
 }
 
-/* Services section */
 
 .row {
     display: flex;
@@ -75,7 +68,6 @@ h1 {
 
 }
 
-/* Service icon */
 .p-3 i {
     color: #007bff;
     margin-bottom: 10px;
@@ -83,7 +75,6 @@ h1 {
 
 }
 
-/* Section title */
 h3 {
     font-weight: 700;
     color: #222;
@@ -95,7 +86,19 @@ h3 {
     cursor: pointer;
 }
 
-/* Responsive tweak */
+#contact {
+    background: linear-gradient(135deg, #01718b, #00A8E8);
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+    font-size: 0.95rem;
+
+}
+
+b {
+    color: #cccc6c;
+}
+
 @media (max-width: 768px) {
     h1 {
         text-align: center;

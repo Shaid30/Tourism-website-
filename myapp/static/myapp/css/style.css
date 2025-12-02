@@ -46,7 +46,7 @@ body {
 .nav-links li a {
     text-decoration: none;
     color: #002B5B;
-    font-size: 1rem;
+    font-size: 1.2rem;
     font-weight: 500;
     transition: color 0.3s ease;
 }
@@ -73,7 +73,8 @@ body {
     z-index: 100;
     list-style: none;
     padding: 10px 0;
-    height: 140px;
+    height: 195px;
+    border-radius: 5px;
 }
 
 .dropdown-content li {
