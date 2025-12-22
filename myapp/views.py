@@ -182,3 +182,15 @@ def search(request):
         "gallery_results": gallery_results,
         "blog_results": blog_results,
     })
+
+
+def book_cox(request):
+    return render(request, 'book_now.html', {'package': 'Coxs Bazar Tour'})
+
+def book_sajek(request):
+    return render(request, 'book_now.html', {'package': 'Sajek Valley Tour'})
+
+def book_sundarban(request):
+    return render(request, 'book_now.html', {'package': 'Sundarban Adventure'})
+
+

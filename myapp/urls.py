@@ -22,6 +22,11 @@ urlpatterns = [
     path('register/', views.register_user, name='register'),
     path('account/', views.user_dashboard, name='user_dashboard'),
     path("search/", views.search, name="search"),
+    path('book/coxsbazar/', views.book_cox, name='book_cox'),
+    path('book/sajek/', views.book_sajek, name='book_sajek'),
+    path('book/sundarban/', views.book_sundarban, name='book_sundarban'),
+
+
 
 
 

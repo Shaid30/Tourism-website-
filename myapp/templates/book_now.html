@@ -1,0 +1,45 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Book Package</title>
+    <link rel="stylesheet" href="{% static 'myapp/css/booking.css' %}">
+</head>
+
+<body>
+
+    <div class="booking-container">
+
+        <h2>You are booking: {{ package.name }}</h2>
+
+        <p><strong>Price:</strong> {{ package.price }} BDT</p>
+        <p><strong>Duration:</strong> {{ package.duration }}</p>
+
+        <form method="POST">
+            {% csrf_token %}
+
+            <input type="text" name="name" placeholder="Your Name" required>
+
+            <input type="email" name="email" placeholder="Email" required>
+
+            <input type="text" name="phonenumber" placeholder="Phone Number" required>
+            <select name="payment_method" required
+                style="padding: 12px; width:100%; margin:10px 0; border-radius: 10px;">
+                <option value="">Select Payment Method</option>
+                <option value="bkash">bKash</option>
+                <option value="nagad">Nagad</option>
+                <option value="rocket">Rocket</option>
+                <option value="cod">Cash On Delivery</option>
+            </select>
+
+            <input type="text" name="transaction_id" placeholder="Transaction ID (if paid)" />
+
+            <button type="submit" class="btn">Confirm Booking</button>
+        </form>
+
+    </div>
+
+</body>
+
+</html>

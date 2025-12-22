@@ -163,7 +163,9 @@
                     <div class=" price-row">
                         <div class="price">BDT 6,500</div>
                         <div class="actions">
-                            <button class="btn btn-book">Book now</button>
+                            <a href="{% url 'book_cox' %}">
+                                <button class="btn btn-book">Book now</button>
+                            </a>
                         </div>
                     </div>
 
@@ -195,8 +197,9 @@
                     <div class="price-row">
                         <div class="price">BDT 8,200</div>
                         <div class="actions">
-                            <button class=" btn btn-book">Book
-                                now</button>
+                            <a href="{% url 'book_sajek' %}">
+                                <button class="btn btn-book">Book now</button>
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -211,7 +214,7 @@
 
                 <div class="card-body">
                     <div class="card-top">
-                        <div class="title">Sundarbans Adventure</div>
+                        <div class="title">Sundarban Adventure</div>
                         <div class="location"><i class="fa-solid fa-location-dot"></i>Sundarban, Khulna</div>
                     </div>
 
@@ -229,7 +232,9 @@
                     <div class="price-row">
                         <div class="price">BDT 5,400</div>
                         <div class="actions">
-                            <button class="btn btn-book">Book now</button>
+                            <a href="{% url 'book_sundarban' %}">
+                                <button class="btn btn-book">Book now</button>
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -245,7 +250,7 @@
                     <img src="{% static 'myapp/images/samanta.jpg'%}" alt="">
                     <p>"Amazing experience! Highly recommend this tour."</p>
                     <h4>Samanta</h4>
-                    <span> Banaripara,Barisla</span>
+                    <span> Banaripara,Barisal</span>
                 </div>
                 <div class="review-card">
                     <img src="{% static 'myapp/images/shuvo.jpg'%}" alt="">
@@ -262,7 +267,7 @@
                 <div class="review-card">
                     <img src="{% static 'myapp/images/jerry.jpg'%}" alt="">
                     <p>“Excellent service! Very satisfied with the experience.”</p>
-                    <h4>Samia </h4>
+                    <h4>Samia</h4>
                     <span>Habiganj,Sylhet</span>
                 </div>
                 <div class="review-card">
