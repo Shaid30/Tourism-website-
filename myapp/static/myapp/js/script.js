@@ -31,11 +31,11 @@ document.querySelectorAll(".btn-more").forEach(btn => {
 });
 
 
-document.querySelectorAll(".btn-book").forEach(btn => {
-    btn.addEventListener("click", function () {
-        const title = this.closest(".card").querySelector(".title").textContent;
-        alert("Booking started for: " + title);
-    });
+/*document.querySelectorAll(".btn-book").forEach(btn => {
+btn.addEventListener("click", function () {
+    const title = this.closest(".card").querySelector(".title").textContent;
+    alert("Booking started for: " + title);
 });
+});*/
 
 

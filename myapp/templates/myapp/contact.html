@@ -11,6 +11,186 @@
         integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
+<div>
+    <nav class="navbar">
+        <div class="logo">Travel<span>BD</span></div>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="{%url 'home' %}">Home</a></li>
+            <li class="dropdown"><a href=" {% url 'destination_categories' %}">Destinations</a>
+                <ul class="dropdown-content">
+                    {% for category in categories_for_nav %}
+                    <li>
+                        <a href="{% url 'category_destinations' category.id %}">
+                            {{ category.name }}
+                        </a>
+                    </li>
+                    {% endfor %}
+                </ul>
+            </li>
+
+            <li>
+                <a href="{% url 'package_list'%} ">Packages</a>
+            </li>
+            <li><a href="{% url 'gallery'%}">Gallery</a></li>
+            <li><a href="{% url 'blog_list' %}">Blog</a></li>
+            <li><a href="{% url 'about'%}">About</a></li>
+            <li><a href="{% url 'contact' %}">Contact</a></li>
+            <div class=" user-dropdown">
+                <a href="#" class="user-icon" id="userMenu" data-toggle="dropdown">
+                    <i class="fa fa-user" style="font-size:22px;"></i>
+                </a>
+
+                <div class=" user-dropdown-menu">
+                    {% if user.is_authenticated %}
+                    <a href="{% url 'user_dashboard' %}">My Account</a>
+                    <a href="{% url 'logout' %}">Logout</a>
+                    {% else %}
+                    <a href="{% url 'login' %}">Login</a>
+                    <a href="{% url 'register' %}">Register</a>
+                    {% endif %}
+
+
+                </div>
+            </div>
+
+
+        </ul>
+        <div class="menu-icon" id="menuIcon">☰</div>
+
+    </nav>
+</div>
+<style>
+    .navbar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        background: linear-gradient(135deg, #00A8E8, #03a5ce);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 12px 0.1px;
+        z-index: 1000;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        height: 30px;
+
+
+    }
+
+    .logo {
+        color: #fff;
+        font-size: 1.5rem;
+        font-weight: bold;
+        margin-bottom: 10px;
+        margin-left: 5px;
+    }
+
+    .logo span {
+        color: #ffe600;
+    }
+
+    .nav-links {
+        list-style: none;
+        display: flex;
+        gap: 25px;
+        margin-bottom: 30px;
+        margin-top: 20px;
+        margin-right: 20px;
+    }
+
+    .nav-links li a {
+        text-decoration: none;
+        color: #002B5B;
+        font-size: 1.2rem;
+        font-weight: 500;
+        transition: color 0.3s ease;
+    }
+
+    .nav-links li a i {
+        font-size: 25px;
+    }
+
+    .nav-links li a:hover {
+        color: #f8c567;
+    }
+
+    .dropdown {
+        position: relative;
+        display: inline-block;
+    }
+
+    .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: rgb(154, 195, 243);
+        min-width: 160px;
+        box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+        z-index: 100;
+        list-style: none;
+        padding: 10px 0;
+        height: 250px;
+        border-radius: 5px;
+    }
+
+    .dropdown-content li {
+        padding: 8px 15px;
+    }
+
+    .dropdown-content li a {
+        color: black;
+        text-decoration: none;
+        display: block;
+    }
+
+    .dropdown:hover .dropdown-content {
+        display: block;
+    }
+
+    .dropdown-content li:hover {
+        background: #f0f0f0;
+    }
+
+    .user-dropdown {
+        position: relative;
+        display: inline-block;
+
+    }
+
+    .user-dropdown-menu {
+        display: none;
+        position: absolute;
+        right: 0;
+        background: rgb(221, 219, 219);
+        padding: 10px 0;
+        min-width: 150px;
+        box-shadow: 0px 4px 10px rgba(20, 14, 14, 0.2);
+        z-index: 999;
+        border-radius: 2px;
+    }
+
+    .user-dropdown-menu a {
+        display: block;
+        padding: 8px 15px;
+        color: rgb(7, 7, 7);
+        text-decoration: none;
+    }
+
+    .user-dropdown-menu a:hover {
+        background: #e8d6d6;
+    }
+
+    .user-dropdown:hover .user-dropdown-menu {
+        display: block;
+    }
+
+    .menu-icon {
+        display: none;
+        font-size: 1.8rem;
+        color: white;
+        cursor: pointer;
+    }
+</style>
+
 
 <body>
 
