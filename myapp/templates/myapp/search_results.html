@@ -1,22 +1,25 @@
+{% load static %}
 <h2>Search Results for "{{ query }}"</h2>
+<link rel="stylesheet" href="{% static 'myapp/css/search.css' %}">
 
-<h3>Packages</h3>
-{% for item in package_results %}
-<p>{{ item.name }}</p>
-{% empty %}
+{% if package_results %}
+<div class="packages-wrap">
+    {% for package in package_results %}
+    <div class="card">
+        <div class="img-box">
+            {% if package.image %}
+            <img src="{{ package.image.url }}" alt="{{ package.name }}">
+            {% else %}
+            <img src="{% static 'default.jpg' %}" alt="No image">
+            {% endif %}
+        </div>
+        <h3>{{ package.name }}</h3>
+        <p>Price: {{ package.price }}</p>
+        <p>Duration: {{ package.duration }}</p>
+        <a href="{% url 'book_package' package.id %}" class="btn">Book Now</a>
+    </div>
+    {% endfor %}
+</div>
+{% else %}
 <p>No packages found.</p>
-{% endfor %}
-
-<h3>Gallery</h3>
-{% for g in gallery_results %}
-<p>{{ g.title }}</p>
-{% empty %}
-<p>No gallery images found.</p>
-{% endfor %}
-
-<h3>Blogs</h3>
-{% for b in blog_results %}
-<p>{{ b.title }}</p>
-{% empty %}
-<p>No blogs found.</p>
-{% endfor %}
+{% endif %}

@@ -6,7 +6,7 @@
         <h3>{{ package.name }}</h3>
         <p>Price: {{ package.price }}</p>
         <p>Duration: {{ package.duration }}</p>
-        <a href="{% url 'booking' package.id %}">Book Now</a>
+        <a href="{% url 'book_package' package.id %}">Book Now</a>
     </li>
     {% endfor %}
 </ul>

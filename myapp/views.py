@@ -84,6 +84,7 @@ def package_list(request):
 
 def book_package(request,package_id):
     package = Package.objects.get(id=package_id)
+    default_number = "01957027536" 
 
     if request.method == "POST":
         name = request.POST.get('name')
@@ -159,8 +160,7 @@ def user_dashboard(request):
 
 def search(request):
     query = request.GET.get("q", "")
-    keywords = query.split()  # split: ['Rangamati', 'Lake', 'Tour']
-
+    keywords = query.split()  
 
 
     package_q = Q()

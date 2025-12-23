@@ -107,6 +107,7 @@ class Booking(models.Model):
     name = models.CharField(max_length=100)
     email = models.EmailField()
     phone = models.CharField(max_length=20)
+    payment_number = models.CharField(max_length=20, default='01957027536')
     payment_method = models.CharField(
         max_length=100,
         choices= [
