@@ -153,10 +153,9 @@ def logout_user(request):
     return redirect('login')
 
 @login_required
-def user_dashboard(request):
+def  user_dashboard(request):
     user = request.user
-    return render(request, 'myapp/dashboard.html', {"user": user})
-
+    return render(request, 'myapp/dashboard.html')
 
 def search(request):
     query = request.GET.get("q", "")

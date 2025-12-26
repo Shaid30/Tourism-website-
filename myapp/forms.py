@@ -39,4 +39,3 @@ class GalleryUploadForm(forms.ModelForm):
    class Meta:
       models = GalleryImage
       fields =['category','title','location','image']
-      
