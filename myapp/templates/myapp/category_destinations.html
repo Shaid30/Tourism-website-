@@ -1,14 +1,21 @@
-<h2 style="text-align: center;">{{ category.name }}</h2style>
+{% load static %}
+<link rel="stylesheet" href="{% static 'myapp/css/destination.css' %}">
 
-    {% for d in destinations %}
-    <div style="margin-bottom: 20px;">
-        <h3 style="text-align: center;">{{ d.name }}</h3>
-        <p>{{ d.description }}</p>
+<body>
+    <h2 class="category-title">{{ category.name }}</h2>
 
-        {% if d.image %}
-        <img src="{{ d.image.url }}" width="220" ; margin-top="30px">
-        {% endif %}
+    <div class="destinations-wrapper">
+        {% for d in destinations %}
+        <div class="destination-card">
+            {% if d.image %}
+            <img src="{{ d.image.url }}" alt="{{ d.name }}">
+            {% endif %}
+
+            <h3>{{ d.name }}</h3>
+            <p>{{ d.description }}</p>
+        </div>
+        {% empty %}
+        <p class="no-destination">No destinations found</p>
+        {% endfor %}
     </div>
-    {% empty %}
-    <p>No destinations found</p>
-    {% endfor %}
+</body>

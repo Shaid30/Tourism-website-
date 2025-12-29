@@ -195,6 +195,61 @@
     b {
         color: #cccc6c;
     }
+
+    footer {
+        background: #0b3c5d;
+        color: #ffffff;
+        padding: 40px 0 20px;
+        font-family: Arial, sans-serif;
+    }
+
+    .footer-container {
+        width: 90%;
+        margin: auto;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 30px;
+    }
+
+    .footer-box h3 {
+        margin-bottom: 15px;
+        font-size: 18px;
+        color: #f4b41a;
+    }
+
+    .footer-box p,
+    .footer-box li {
+        font-size: 14px;
+        line-height: 1.6;
+        color: #cccccc;
+    }
+
+    .footer-box ul {
+        list-style: none;
+        padding: 0;
+    }
+
+    .footer-box ul li {
+        margin-bottom: 8px;
+    }
+
+    .footer-box ul li a {
+        color: #cccccc;
+        text-decoration: none;
+    }
+
+    .footer-box ul li a:hover {
+        color: #f4b41a;
+    }
+
+    .footer-bottom {
+        border-top: 1px solid #333;
+        margin-top: 30px;
+        padding-top: 15px;
+        text-align: center;
+        font-size: 14px;
+        color: #bbbbbb;
+    }
 </style>
 
 <body style="overflow-x: hidden; background: #dcd3d3;">
@@ -225,9 +280,73 @@
 
     </div>
 
-    <footer id="contact">
-        <p>© 2025 Travel BD. All rights reserved.</p>
-        <p>Developed by <b>Md. Abu Shaid</b></p>
+    <footer class="footer">
+        <div class="footer-container">
+
+
+            <div class="footer-box">
+                <h3>About</h3>
+                <p>
+                    This tourism website helps users explore popular destinations
+                    and book tour packages easily across Bangladesh.
+                </p>
+            </div>
+            <div class="footer-box">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="http://127.0.0.1:8000/">Home</a></li>
+                    <li><a href="http://127.0.0.1:8000/destinations/">Destinations</a></li>
+                    <li><a href="http://127.0.0.1:8000/packages/">Packages</a></li>
+                    <li><a href="http://127.0.0.1:8000/about/">About Us</a></li>
+                    <li><a href="http://127.0.0.1:8000/contact/">Contact</a></li>
+                </ul>
+            </div>
+
+
+            <div class="footer-box">
+                <h3>Popular Destinations</h3>
+                <ul>
+                    <li>Cox’s Bazar</li>
+                    <li>Sundarbans</li>
+                    <li>Srimangal</li>
+                    <li>Sylhet</li>
+                    <li>Sajek Valley</li>
+                </ul>
+            </div>
+
+
+            <div class="footer-box">
+                <h3>Contact</h3>
+
+                <p>
+                    <i class="fa-solid fa-location-dot"></i>
+                    Dhaka, Bangladesh
+                </p>
+
+                <p>
+                    <i class="fa-solid fa-phone"></i>
+                    +8801904099025
+                </p>
+
+                <p>
+                    <i class="fa-solid fa-envelope"></i>
+                    travelbd123@gmail.com
+                </p>
+            </div>
+
+
+        </div>
+
+        <div class="footer-bottom">
+            <p>
+                Technologies: HTML | CSS | Bootstrap | Python | Django
+            </p>
+            <p>
+                © 2025 Travel BD|
+
+                <strong>Developed by Abu Shaid</strong>
+            </p>
+        </div>
     </footer>
 
 </body>
