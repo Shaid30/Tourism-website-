@@ -1,0 +1,165 @@
+body {
+    background: #E5F0FF;
+    font-family: 'Poppins', sans-serif;
+    overflow-x: hidden;
+
+}
+
+img.img-fluid {
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    font-weight: 700;
+    color: #1a1a1a;
+    margin-bottom: 15px;
+    margin-left: 200px;
+    margin-top: 75px;
+}
+
+.lead {
+    color: #444;
+    font-size: 1.3rem;
+    line-height: 1.7;
+    margin-bottom: 260px;
+}
+
+.mb-3 {
+    text-align: center;
+}
+
+.card {
+    border-radius: 12px;
+    overflow: hidden;
+    border: none;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: 0.3s ease;
+    background: #99C2F9;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card-img-top {
+    height: 200px;
+    object-fit: cover;
+}
+
+
+.row {
+    display: flex;
+    justify-content: center;
+}
+
+.p-3.border.rounded {
+    padding: 20px !important;
+    border-radius: 12px !important;
+    background: #b5e4f0;
+    border: none !important;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+    transition: 0.3s ease;
+
+}
+
+.p-3.border.rounded:hover {
+    transform: translateY(-5px);
+
+}
+
+.p-3 i {
+    color: #007bff;
+    margin-bottom: 10px;
+    display: block;
+
+}
+
+h3 {
+    font-weight: 700;
+    color: #222;
+    margin-bottom: 20px;
+}
+
+.meet-icon {
+    font-size: 30px;
+    cursor: pointer;
+}
+
+#contact {
+    background: linear-gradient(135deg, #01718b, #00A8E8);
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+    font-size: 0.95rem;
+
+}
+
+b {
+    color: #cccc6c;
+}
+
+footer {
+    background: #0b3c5d;
+    color: #ffffff;
+    padding: 40px 0 20px;
+    font-family: Arial, sans-serif;
+}
+
+.footer-container {
+    width: 90%;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 30px;
+}
+
+.footer-box h3 {
+    margin-bottom: 15px;
+    font-size: 18px;
+    color: #f4b41a;
+}
+
+.footer-box p,
+.footer-box li {
+    font-size: 14px;
+    line-height: 1.6;
+    color: #cccccc;
+}
+
+.footer-box ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-box ul li {
+    margin-bottom: 8px;
+}
+
+.footer-box ul li a {
+    color: #cccccc;
+    text-decoration: none;
+}
+
+.footer-box ul li a:hover {
+    color: #f4b41a;
+}
+
+.footer-bottom {
+    border-top: 1px solid #333;
+    margin-top: 30px;
+    padding-top: 15px;
+    text-align: center;
+    font-size: 14px;
+    color: #bbbbbb;
+}
+
+@media (max-width: 768px) {
+    h1 {
+        text-align: center;
+    }
+
+    .lead {
+        text-align: center;
+    }
+}
